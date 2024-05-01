@@ -7,6 +7,7 @@ const GET_RECIPES = gql`
       instructions
       ingredients
       country
+      img
     }
   }
 `;
@@ -18,6 +19,7 @@ const GET_RANDOM_RECIPES = gql`
       vote_average
       description
       id
+      img
     }
   }
 `;
