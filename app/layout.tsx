@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Prata, Yeseva_One } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers/Providers";
 import AppBar from "@/components/AppBar/AppBar";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const prata = Prata({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-prata",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={prata.className}>
         <AppBar />
         <Providers>{children}</Providers>
       </body>

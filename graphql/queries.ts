@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-const getRecipesQuery = gql`
+const GET_RECIPES = gql`
   query {
     recipes {
       name
@@ -11,6 +11,20 @@ const getRecipesQuery = gql`
   }
 `;
 
-const queries = { getRecipes: getRecipesQuery };
+const GET_RANDOM_RECIPES = gql`
+  query GetRandomRecipes {
+    getRandomRecipes {
+      name
+      vote_average
+      description
+      id
+    }
+  }
+`;
+
+const queries = {
+  GET_RECIPES: GET_RECIPES,
+  GET_RANDOM_RECIPES: GET_RANDOM_RECIPES,
+};
 
 export default queries;
