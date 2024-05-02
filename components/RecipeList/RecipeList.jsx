@@ -25,7 +25,7 @@ const RecipeList = ({ req }) => {
                   key={id}
                 >
                   <Image
-                    alt="Recipe 1"
+                    alt={`Recipe ${name}`}
                     className="w-full h-48 object-cover"
                     height={250}
                     src={!img ? defaultImg : backImg + img}
