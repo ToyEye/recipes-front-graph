@@ -38,11 +38,6 @@ const RecipeList = ({ req }) => {
                   <div className="p-4">
                     <h2 className="text-xl font-bold mb-2">{name}</h2>
                     <div className="flex items-center mb-2">
-                      {/* <StarIcon className="w-5 h-5 fill-primary" />
-                      <StarIcon className="w-5 h-5 fill-primary" />
-                      <StarIcon className="w-5 h-5 fill-primary" />
-                      <StarIcon className="w-5 h-5 fill-muted stroke-muted-foreground" />
-                      <StarIcon className="w-5 h-5 fill-muted stroke-muted-foreground" /> */}
                       <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
                         {vote_average}
                       </span>
