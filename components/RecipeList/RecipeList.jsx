@@ -9,6 +9,10 @@ const RecipeList = ({ req }) => {
   const { data, error, loading } = useQuery(req);
   console.log(data);
 
+  const defaultImg = "https://generated.vusercontent.net/placeholder.svg";
+  const backImg =
+    "https://res.cloudinary.com/dglfc2nto/image/upload/v1714638459/recipes";
+
   return (
     <>
       {data?.getRandomRecipes && (
@@ -24,7 +28,7 @@ const RecipeList = ({ req }) => {
                     alt="Recipe 1"
                     className="w-full h-48 object-cover"
                     height={250}
-                    src={img}
+                    src={!img ? defaultImg : backImg + img}
                     style={{
                       aspectRatio: "400/250",
                       objectFit: "cover",
