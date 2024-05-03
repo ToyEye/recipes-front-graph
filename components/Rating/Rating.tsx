@@ -1,15 +1,33 @@
+"use client";
+
 import React from "react";
 import RatingStars from "react-rating-stars-component";
 
-const Rating = ({ rating = 0, size = 24, id = "", handleVoteChange }) => {
-  const ratingChanged = (newRating: number) => {
-    handleVoteChange(id, newRating.toString());
+import mutation from "@/graphql/mutations";
+import { useMutation } from "@apollo/client";
+
+const Rating = ({ rating = 0, size = 24, id = "" }) => {
+  const [changeVoteMutation, { data: voteData }] = useMutation(
+    mutation.changeVote
+  );
+
+  const ratingChanged = async (newRating: number) => {
+    // handleVoteChange(id, newRating.toString());
+
+    try {
+      const { data } = await changeVoteMutation({
+        variables: { id, newVote: newRating.toString() },
+      });
+      console.log("Vote changed successfully", data);
+    } catch (error) {
+      console.error("Error changing vote", error);
+    }
   };
 
   return (
     <RatingStars
       count={5}
-      value={5}
+      value={rating}
       size={size}
       activeColor="#F87719"
       onChange={ratingChanged}
