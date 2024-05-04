@@ -4,10 +4,9 @@ const GET_RECIPES = gql`
   query {
     recipes {
       name
-      instructions
-      ingredients
-      country
+      description
       img
+      vote_average
     }
   }
 `;
@@ -33,10 +32,24 @@ const GET_COUNTRIES = gql`
   }
 `;
 
+const GET_RECIPE_BY_COUNTRY = gql`
+  query ($country: String) {
+    country(country: $country) {
+      recipes {
+        name
+        description
+        img
+        vote_average
+      }
+    }
+  }
+`;
+
 const queries = {
   GET_RECIPES: GET_RECIPES,
   GET_RANDOM_RECIPES: GET_RANDOM_RECIPES,
   GET_COUNTRIES: GET_COUNTRIES,
+  GET_RECIPE_BY_COUNTRY: GET_RECIPE_BY_COUNTRY,
 };
 
 export default queries;

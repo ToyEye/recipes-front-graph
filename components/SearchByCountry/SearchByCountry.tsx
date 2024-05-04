@@ -1,12 +1,21 @@
 "use client";
 
-import React from "react";
+import React, { ChangeEvent } from "react";
 import { useQuery } from "@apollo/client";
 
 import queries from "@/graphql/queries";
 
-const SearchByCountry = () => {
+type Props = {
+  getCountry: (args: string) => void;
+};
+
+const SearchByCountry = ({ getCountry }: Props) => {
   const { data, loading } = useQuery(queries.GET_COUNTRIES);
+
+  const handleCountryChange = (event: ChangeEvent<HTMLSelectElement>) => {
+    const selectedCountry = event.target.value;
+    getCountry(selectedCountry);
+  };
 
   return (
     <div>
@@ -18,6 +27,7 @@ const SearchByCountry = () => {
         defaultValue="default"
         name="countries"
         required
+        onChange={handleCountryChange}
       >
         <option className="w-48 md:w-64" disabled value="default">
           {loading ? "loading..." : "Select a country"}

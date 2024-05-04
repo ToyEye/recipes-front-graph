@@ -7,7 +7,15 @@ import RecipeList from "../RecipeList/RecipeList";
 
 const RandomRecipe = () => {
   const { data, error, loading } = useQuery(queries.GET_RANDOM_RECIPES);
-  return <RecipeList data={data} itemCount={3} loading={loading} />;
+  return (
+    <>
+      <RecipeList
+        data={data?.getRandomRecipes}
+        itemCount={3}
+        loading={loading}
+      />
+    </>
+  );
 };
 
 export default RandomRecipe;

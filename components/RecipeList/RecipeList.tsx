@@ -15,12 +15,8 @@ type TRecipe = {
   vote_average: number;
 };
 
-type TDataQuery = {
-  getRandomRecipes: TRecipe[];
-};
-
 type Props = {
-  data: TDataQuery;
+  data: TRecipe[];
   itemCount: number;
   loading: boolean;
 };
@@ -35,7 +31,7 @@ const RecipeList = ({ data, itemCount, loading }: Props) => {
             .map((d, i) => <RecipeItemSkeleton key={i} />)
         ) : (
           <>
-            {data?.getRandomRecipes.map(
+            {data.map(
               ({ id, name, description, img, vote_average }: TRecipe) => {
                 return (
                   <RecipeItem
