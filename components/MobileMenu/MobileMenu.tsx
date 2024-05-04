@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import clsx from "clsx";
 
-import { navLinks } from "@/lib/navLinks";
+import { navLinks } from "@/app/lib/navLinks";
 
 const MobileMenu = ({ isOpen = false }: { isOpen: boolean }) => {
   const isOpenMenu = clsx({

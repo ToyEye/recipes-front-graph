@@ -24,9 +24,19 @@ const GET_RANDOM_RECIPES = gql`
   }
 `;
 
+const GET_COUNTRIES = gql`
+  {
+    countries {
+      id
+      country
+    }
+  }
+`;
+
 const queries = {
   GET_RECIPES: GET_RECIPES,
   GET_RANDOM_RECIPES: GET_RANDOM_RECIPES,
+  GET_COUNTRIES: GET_COUNTRIES,
 };
 
 export default queries;

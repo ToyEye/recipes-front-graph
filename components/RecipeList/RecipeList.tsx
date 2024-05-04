@@ -5,23 +5,38 @@ import { useQuery } from "@apollo/client";
 
 import RecipeItemSkeleton from "@/app/lib/skeletons/RecipeItemSkeleton";
 
-import mutation from "@/graphql/mutations";
 import RecipeItem from "../RecipeItem/RecipeItem";
 
-const RecipeList = ({ req }) => {
-  const { data, error, loading } = useQuery(req);
+type TRecipe = {
+  id: string;
+  name: string;
+  description: string;
+  img: string;
+  vote_average: number;
+};
 
+type TDataQuery = {
+  getRandomRecipes: TRecipe[];
+};
+
+type Props = {
+  data: TDataQuery;
+  itemCount: number;
+  loading: boolean;
+};
+
+const RecipeList = ({ data, itemCount, loading }: Props) => {
   return (
     <>
       <ul className="grid grid-cols-1  md:grid-cols-3 gap-8">
         {loading ? (
-          Array(3)
+          Array(itemCount)
             .fill(null)
             .map((d, i) => <RecipeItemSkeleton key={i} />)
         ) : (
           <>
             {data?.getRandomRecipes.map(
-              ({ id, name, description, img, vote_average }) => {
+              ({ id, name, description, img, vote_average }: TRecipe) => {
                 return (
                   <RecipeItem
                     key={id}

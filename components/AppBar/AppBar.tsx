@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 
 import MobileMenu from "../MobileMenu/MobileMenu";
 
-import { navLinks } from "@/lib/navLinks";
+import { navLinks } from "@/app/lib/navLinks";
 
 const AppBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
