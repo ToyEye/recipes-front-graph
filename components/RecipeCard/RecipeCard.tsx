@@ -24,7 +24,7 @@ const RecipeCard = ({
 
   return (
     <Section>
-      <Heading text={name} className="text-xl font-bold mb-2" />
+      <Heading text={name} className="text-3xl font-bold mb-4 md:text-4xl" />
       <div>
         <Image
           src={!img ? defaultImg : backImg + img}
