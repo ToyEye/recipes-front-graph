@@ -23,7 +23,6 @@ export const useSearch = (country: string) => {
   useEffect(() => {
     if (dataByCountry?.country) {
       setData(dataByCountry.country.recipes);
-      console.log(dataByCountry.country.recipes);
     }
 
     setLoading(loadingByCountry);
@@ -32,7 +31,6 @@ export const useSearch = (country: string) => {
   useEffect(() => {
     if (dataAllRecipe) {
       setData(dataAllRecipe.recipes);
-      console.log(dataAllRecipe.recipes);
     }
     setLoading(loadingAllRecipe);
   }, [dataAllRecipe, loadingAllRecipe]);
