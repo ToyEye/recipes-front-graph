@@ -7,6 +7,7 @@ const GET_RECIPES = gql`
       description
       img
       vote_average
+      id
     }
   }
 `;
@@ -40,6 +41,7 @@ const GET_RECIPE_BY_COUNTRY = gql`
         description
         img
         vote_average
+        id
       }
     }
   }

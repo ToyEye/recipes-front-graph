@@ -25,30 +25,32 @@ const RecipeItem = ({
 
   return (
     <li className="bg-white shadow-md rounded-lg overflow-hidden" key={id}>
-      <Image
-        src={!img ? defaultImg : backImg + img}
-        alt={`Recipe ${name}`}
-        className="w-full h-48 object-cover"
-        height={250}
-        style={{
-          aspectRatio: "400/250",
-          objectFit: "cover",
-        }}
-        width={400}
-      />
-      <div className="p-4">
-        <Heading className="text-xl font-bold mb-2" text={name} />
-        <div className="flex items-center mb-2">
-          <Rating rating={vote_average} id={id} />
-          <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
-            {vote_average}
-          </span>
+      <Link href={`/recipes/${id}`}>
+        <Image
+          src={!img ? defaultImg : backImg + img}
+          alt={`Recipe ${name}`}
+          className="w-full h-48 object-cover"
+          height={250}
+          style={{
+            aspectRatio: "400/250",
+            objectFit: "cover",
+          }}
+          width={400}
+        />
+        <div className="p-4">
+          <Heading className="text-xl font-bold mb-2" text={name} />
+          <div className="flex items-center mb-2">
+            <Rating rating={vote_average} id={id} />
+            <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">
+              {vote_average}
+            </span>
+          </div>
+          <p className="text-gray-600">{description}</p>
+          <Link className="text-blue-500 hover:text-blue-700" href="#">
+            View Recipe
+          </Link>
         </div>
-        <p className="text-gray-600">{description}</p>
-        <Link className="text-blue-500 hover:text-blue-700" href="#">
-          View Recipe
-        </Link>
-      </div>
+      </Link>
     </li>
   );
 };
