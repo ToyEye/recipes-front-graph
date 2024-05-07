@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Rating from "../Rating/Rating";
 import Link from "next/link";
+import Heading from "../Heading/Heading";
 
 interface IRecipeItem {
   img: string;
@@ -25,10 +26,10 @@ const RecipeItem = ({
   return (
     <li className="bg-white shadow-md rounded-lg overflow-hidden" key={id}>
       <Image
+        src={!img ? defaultImg : backImg + img}
         alt={`Recipe ${name}`}
         className="w-full h-48 object-cover"
         height={250}
-        src={!img ? defaultImg : backImg + img}
         style={{
           aspectRatio: "400/250",
           objectFit: "cover",
@@ -36,7 +37,7 @@ const RecipeItem = ({
         width={400}
       />
       <div className="p-4">
-        <h2 className="text-xl font-bold mb-2">{name}</h2>
+        <Heading className="text-xl font-bold mb-2" text={name} />
         <div className="flex items-center mb-2">
           <Rating rating={vote_average} id={id} />
           <span className="ml-2 text-sm text-gray-500 dark:text-gray-400">

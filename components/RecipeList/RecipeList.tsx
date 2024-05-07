@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import { useQuery } from "@apollo/client";
 
 import RecipeItemSkeleton from "@/app/lib/skeletons/RecipeItemSkeleton";
 
