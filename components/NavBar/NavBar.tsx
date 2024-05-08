@@ -18,16 +18,23 @@ const NavBar = ({ location, isOpenMenu }: Props) => {
     { "left-0 ": isOpenMenu && location === "modalMenu" }
   );
 
-  const navListStyle = clsx("flex gap-4", {
-    "flex-col items-center": location === "modalMenu",
-  });
+  const navListStyle = clsx(
+    "flex gap-4",
+    {
+      "flex-col items-center": location === "modalMenu",
+    },
+    {
+      "grid grid-cols-2 mb-8 justify-items-center md:grid-cols-4":
+        location === "footer",
+    }
+  );
 
   return (
     <nav className={navStyle}>
       <ul className={navListStyle}>
         {navLinks.map(({ id, link, text }) => (
           <li key={id}>
-            <Link className="hover:text-gray-400" href={link}>
+            <Link className="hover:text-gray-400 " href={link}>
               {text}
             </Link>
           </li>
