@@ -3,6 +3,7 @@ import { Prata, Yeseva_One } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers/Providers";
 import AppBar from "@/components/AppBar/AppBar";
+import Footer from "@/components/Footer/Footer";
 
 const prata = Prata({
   weight: "400",
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={prata.className}>
         <AppBar />
         <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );

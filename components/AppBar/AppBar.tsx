@@ -7,6 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import MobileMenu from "../MobileMenu/MobileMenu";
 
 import { navLinks } from "@/app/lib/navLinks";
+import NavBar from "../NavBar/NavBar";
 
 const AppBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,17 +25,8 @@ const AppBar = () => {
         <button className="lg:hidden cursor-pointer" onClick={onMenuToggle}>
           <GiHamburgerMenu />
         </button>
-        <nav className="hidden lg:block space-x-4">
-          <ul className="flex gap-4">
-            {navLinks.map(({ id, link, text }) => (
-              <li key={id}>
-                <Link className="hover:text-gray-400" href={link}>
-                  {text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+
+        <NavBar location="header" />
         <MobileMenu isOpen={isMenuOpen} />
       </div>
     </header>

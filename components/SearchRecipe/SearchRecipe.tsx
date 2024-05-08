@@ -6,6 +6,7 @@ import SearchByCountry from "../SearchByCountry/SearchByCountry";
 
 import RecipeList from "../RecipeList/RecipeList";
 import { useSearch } from "@/app/hooks/useSearch";
+import { useSearchParams } from "next/navigation";
 
 const SearchRecipe = () => {
   const [country, setCountry] = useState("");
