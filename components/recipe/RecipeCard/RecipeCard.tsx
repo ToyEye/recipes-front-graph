@@ -1,8 +1,9 @@
 import React from "react";
-import Section from "../Section/Section";
-import Heading from "../Heading/Heading";
+
 import Image from "next/image";
-import Rating from "../Rating/Rating";
+import Section from "@/components/Section/Section";
+import Heading from "@/components/Heading/Heading";
+import Rating from "@/components/Rating/Rating";
 
 type Props = {
   name: string;

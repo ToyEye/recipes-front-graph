@@ -1,5 +1,5 @@
 import Hero from "@/components/Hero/Hero";
-import SearchRecipe from "@/components/SearchRecipe/SearchRecipe";
+import SearchRecipe from "@/components/recipes/SearchRecipe/SearchRecipe";
 import React from "react";
 
 const Recipes = () => {

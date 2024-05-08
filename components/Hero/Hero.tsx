@@ -1,6 +1,6 @@
 import Section from "../Section/Section";
 
-import RandomRecipe from "../RandomRecipe/RandomRecipe";
+import RandomRecipe from "../recipes/RandomRecipe/RandomRecipe";
 import Heading from "../Heading/Heading";
 
 const Hero = () => {

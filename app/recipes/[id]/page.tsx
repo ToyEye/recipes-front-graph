@@ -1,7 +1,8 @@
 "use client";
 
 import RecipeDetailsSkeleton from "@/app/lib/skeletons/RecipeDetailsSkeleton";
-import RecipeCard from "@/components/RecipeCard/RecipeCard";
+import RecipeCard from "@/components/recipe/RecipeCard/RecipeCard";
+
 import queries from "@/graphql/queries";
 import { useQuery } from "@apollo/client";
 import React from "react";

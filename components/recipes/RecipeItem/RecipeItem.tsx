@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import Rating from "../Rating/Rating";
+import Rating from "../../Rating/Rating";
 import Link from "next/link";
-import Heading from "../Heading/Heading";
+import Heading from "../../Heading/Heading";
 
 interface IRecipeItem {
   img: string;

@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import Section from "../Section/Section";
-import SearchByCountry from "../recipes/SearchByCountry/SearchByCountry";
+import Section from "../../Section/Section";
+import SearchByCountry from "../SearchByCountry/SearchByCountry";
 
 import RecipeList from "../RecipeList/RecipeList";
 import { useSearch } from "@/app/hooks/useSearch";

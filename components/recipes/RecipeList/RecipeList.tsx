@@ -3,7 +3,6 @@
 import React from "react";
 
 import RecipeItemSkeleton from "@/app/lib/skeletons/RecipeItemSkeleton";
-
 import RecipeItem from "../RecipeItem/RecipeItem";
 
 type TRecipe = {
