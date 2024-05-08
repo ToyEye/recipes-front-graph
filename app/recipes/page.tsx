@@ -1,4 +1,4 @@
-import Hero from "@/components/Hero/Hero";
+import Hero from "@/components/recipes/Hero/Hero";
 import SearchRecipe from "@/components/recipes/SearchRecipe/SearchRecipe";
 import React from "react";
 
