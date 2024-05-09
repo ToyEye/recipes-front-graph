@@ -4,9 +4,8 @@ import React, { useState } from "react";
 import Section from "../Section/Section";
 import SearchByCountry from "../recipes/SearchByCountry/SearchByCountry";
 
-import RecipeList from "../RecipeList/RecipeList";
 import { useSearch } from "@/app/hooks/useSearch";
-import { useSearchParams } from "next/navigation";
+import RecipeList from "../recipes/RecipeList/RecipeList";
 
 const SearchRecipe = () => {
   const [country, setCountry] = useState("");
