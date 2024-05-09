@@ -5,6 +5,7 @@ import RecipeCard from "@/components/recipe/RecipeCard/RecipeCard";
 
 import queries from "@/graphql/queries";
 import { useQuery } from "@apollo/client";
+import clsx from "clsx";
 import React from "react";
 
 const Recipe = ({ params }: { params: { id: string } }) => {
@@ -12,12 +13,14 @@ const Recipe = ({ params }: { params: { id: string } }) => {
     variables: { id: params.id },
   });
 
+  const style = clsx({ "lg:h-tab-calc": loading });
+
   console.log(data?.recipe);
   return (
-    <div>
+    <main className={style}>
       {data && <RecipeCard {...data?.recipe} />}
       {loading && <RecipeDetailsSkeleton />}
-    </div>
+    </main>
   );
 };
 
