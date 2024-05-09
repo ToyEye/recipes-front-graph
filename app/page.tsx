@@ -2,7 +2,7 @@ import Hero from "@/components/home/Hero/Hero";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="bg-gradient-to-r from-[#1a1512] to-[#53493f] ">
       {<Hero />}
     </main>
   );

@@ -21,9 +21,9 @@ const config: Config = {
         lg: "1280px",
       },
       height: {
-        "mob-calc": "calc(100vh - 64px - 156px)",
-        "tab-calc": "calc(100vh - 64px - 116px)",
-        "desk-calc": "calc(100vh - 64px - 116px)",
+        "mob-calc": "calc(100vh - 64px - 156px - 96px)",
+        "tab-calc": "calc(100vh - 64px - 116px - 192px)",
+        "desc-calc": "calc(100vh - 64px - 116px)",
       },
     },
   },

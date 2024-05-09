@@ -13,7 +13,7 @@ const Recipe = ({ params }: { params: { id: string } }) => {
     variables: { id: params.id },
   });
 
-  const style = clsx({ "lg:h-tab-calc": loading });
+  const style = clsx({ "lg:h-desc-calc": loading });
 
   console.log(data?.recipe);
   return (
