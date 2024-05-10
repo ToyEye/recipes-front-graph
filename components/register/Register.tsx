@@ -1,11 +1,12 @@
 import React from "react";
 import Section from "../Section/Section";
+import Heading from "../Heading/Heading";
 
 const Register = () => {
   return (
     <Section type="hero">
       <div className="container mx-auto">
-        <h1 className="text-3xl font-bold mb-4">Register</h1>
+        <Heading className="text-3xl font-bold mb-4" text="Register" />
         <div className="max-w-md mx-auto">
           <form>
             <div className="mb-4">

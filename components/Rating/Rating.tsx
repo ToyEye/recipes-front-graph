@@ -7,7 +7,7 @@ import mutation from "@/graphql/mutations";
 import { useMutation } from "@apollo/client";
 
 const Rating = ({ rating = 0, size = 24, id = "" }) => {
-  const [changeVoteMutation] = useMutation(mutation.changeVote);
+  const [changeVoteMutation] = useMutation(mutation.CHANGEVOTE);
 
   const ratingChanged = async (newRating: number) => {
     try {

@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-const changeVote = gql`
+const CHANGEVOTE = gql`
   mutation ($id: ID, $newVote: String) {
     changeVote(id: $id, newVote: $newVote) {
       id
@@ -9,8 +9,28 @@ const changeVote = gql`
   }
 `;
 
+const SIGNUP = gql`
+  mutation (
+    $name: String
+    $email: String
+    $password: String
+    $comfirmPassword: String
+  ) {
+    signup(
+      name: $name
+      email: $email
+      password: $password
+      comfirmPassword: $comfirmPassword
+    ) {
+      name
+      email
+    }
+  }
+`;
+
 const mutation = {
-  changeVote: changeVote,
+  CHANGEVOTE: CHANGEVOTE,
+  SIGNUP: SIGNUP,
 };
 
 export default mutation;
