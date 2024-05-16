@@ -14,16 +14,17 @@ const SIGNUP = gql`
     $name: String
     $email: String
     $password: String
-    $comfirmPassword: String
+    $confirmPassword: String
   ) {
     signup(
       name: $name
       email: $email
       password: $password
-      confirmPassword: $comfirmPassword
+      confirmPassword: $confirmPassword
     ) {
       name
       email
+      token
     }
   }
 `;

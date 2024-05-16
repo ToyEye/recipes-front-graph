@@ -17,10 +17,12 @@ const RegisterForm = () => {
       confirmPassword: "",
     },
     validationSchema: sighupSchema,
-    onSubmit: async ({ name, email, password, confirmPassword }) => {
+    onSubmit: async (values) => {
       const { data } = await signUp({
-        variables: { name, email, password, confirmPassword },
+        variables: values,
       });
+
+      await localStorage.setItem("token", data?.signup.token);
     },
   });
 
@@ -64,7 +66,7 @@ const RegisterForm = () => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
             id="password"
             placeholder="Enter your password"
-            type="password"
+            type="text"
             onChange={formik.handleChange}
             value={formik.values.password}
           />
@@ -78,12 +80,15 @@ const RegisterForm = () => {
           </label>
           <input
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
-            id="confirm-password"
+            id="confirmPassword"
             placeholder="Confirm your password"
-            type="password"
+            type="text"
             onChange={formik.handleChange}
             value={formik.values.confirmPassword}
           />
+          {formik.errors.confirmPassword && formik.touched.confirmPassword && (
+            <p>{formik.errors.confirmPassword}</p>
+          )}
         </div>
         <button
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-all"

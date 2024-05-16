@@ -2,10 +2,10 @@
 
 import React, { useState } from "react";
 
-import SearchByCountry from "../recipes/SearchByCountry/SearchByCountry";
+import SearchByCountry from "./SearchByCountry";
 
 import { useSearch } from "@/app/hooks/useSearch";
-import RecipeList from "../recipes/RecipeList/RecipeList";
+import RecipeList from "./recipe/RecipeList";
 import Section from "../Section";
 
 const SearchRecipe = () => {

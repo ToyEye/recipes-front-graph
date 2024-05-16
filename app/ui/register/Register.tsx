@@ -1,8 +1,8 @@
 import React from "react";
 
-import RegisterForm from "../RegisterForm/RegisterForm";
-import Section from "../../Section";
-import Heading from "../../Heading";
+import RegisterForm from "./RegisterForm";
+import Section from "../Section";
+import Heading from "../Heading";
 
 const Register = () => {
   return (

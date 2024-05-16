@@ -1,8 +1,8 @@
 import Heading from "@/app/ui/Heading";
 
-import RandomRecipe from "../RandomRecipe/RandomRecipe";
 import Image from "next/image";
-import Section from "../../Section";
+import Section from "../Section";
+import RandomRecipe from "./RandomRecipe";
 
 const Hero = () => {
   return (
