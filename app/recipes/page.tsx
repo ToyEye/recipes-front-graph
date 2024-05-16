@@ -1,6 +1,6 @@
-import Hero from "@/components/recipes/Hero/Hero";
-import SearchRecipe from "@/components/recipes/SearchRecipe/SearchRecipe";
 import React from "react";
+import SearchRecipe from "../ui/recipes/SearchRecipe";
+import Hero from "../ui/home/Hero/Hero";
 
 const Recipes = () => {
   return (

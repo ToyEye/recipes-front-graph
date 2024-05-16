@@ -1,6 +1,6 @@
 import React from "react";
-import Container from "../Container/Container";
-import NavBar from "../NavBar/NavBar";
+import Container from "../../app/ui/Container";
+import NavBar from "./NavBar";
 
 const Footer = () => {
   return (

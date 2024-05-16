@@ -1,11 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
-import Section from "../../Section/Section";
+
 import SearchByCountry from "../SearchByCountry/SearchByCountry";
 
 import { useSearch } from "@/app/hooks/useSearch";
 import RecipeList from "../RecipeList/RecipeList";
+import Section from "../../Section";
 
 const SearchRecipe = () => {
   const [country, setCountry] = useState("");

@@ -20,7 +20,7 @@ const SIGNUP = gql`
       name: $name
       email: $email
       password: $password
-      comfirmPassword: $comfirmPassword
+      confirmPassword: $comfirmPassword
     ) {
       name
       email

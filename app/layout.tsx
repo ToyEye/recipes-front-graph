@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Prata, Yeseva_One } from "next/font/google";
+import { Prata } from "next/font/google";
+import { Toaster } from "react-hot-toast";
+
+import { Providers } from "@/app/ui/Providers";
+
+import Footer from "./ui/Footer";
+import AppBar from "./ui/AppBar";
+
 import "./globals.css";
-import { Providers } from "@/components/Providers/Providers";
-import AppBar from "@/components/AppBar/AppBar";
-import Footer from "@/components/Footer/Footer";
 
 const prata = Prata({
   weight: "400",
@@ -28,6 +32,7 @@ export default function RootLayout({
         <AppBar />
         <Providers>{children}</Providers>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );

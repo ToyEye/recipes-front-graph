@@ -1,7 +1,8 @@
-import Heading from "@/components/Heading/Heading";
-import Section from "@/components/Section/Section";
+import Heading from "@/app/ui/Heading";
+
 import RandomRecipe from "../RandomRecipe/RandomRecipe";
 import Image from "next/image";
+import Section from "../../Section";
 
 const Hero = () => {
   return (
