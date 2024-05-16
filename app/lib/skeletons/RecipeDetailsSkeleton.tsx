@@ -1,4 +1,4 @@
-import Section from "@/components/Section/Section";
+import Section from "@/app/ui/Section";
 import React from "react";
 
 const RecipeDetailsSkeleton = () => {
