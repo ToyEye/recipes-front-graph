@@ -29,9 +29,20 @@ const SIGNUP = gql`
   }
 `;
 
+const LOGIN = gql`
+  mutation ($email: String, $password: String) {
+    signin(email: $email, password: $password) {
+      name
+      email
+      token
+    }
+  }
+`;
+
 const mutation = {
   CHANGEVOTE: CHANGEVOTE,
   SIGNUP: SIGNUP,
+  LOGIN: LOGIN,
 };
 
 export default mutation;

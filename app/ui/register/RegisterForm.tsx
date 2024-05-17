@@ -3,11 +3,13 @@
 import React from "react";
 import { useFormik } from "formik";
 import { useMutation } from "@apollo/client";
+
 import mutation from "@/graphql/mutations";
-import { sighupSchema } from "@/app/lib/validation/authSchema";
 import Button from "../Button";
 import Input from "../Input";
 import Label from "../Label";
+
+import { sighupSchema } from "@/app/lib/validation/authSchema";
 
 const RegisterForm = () => {
   const [signUp] = useMutation(mutation.SIGNUP);

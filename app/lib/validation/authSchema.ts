@@ -14,3 +14,13 @@ export const sighupSchema = Yup.object().shape({
       return this.parent.password === value;
     }),
 });
+
+export const loginSchema = Yup.object().shape({
+  name: Yup.string().required("Please enter your name"),
+  email: Yup.string()
+    .email("Enter a correct email")
+    .required("Please enter email"),
+  password: Yup.string()
+    .min(8, "Password must contain at least 8 characters")
+    .required("Password is required"),
+});
