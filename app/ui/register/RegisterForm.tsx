@@ -5,6 +5,7 @@ import { useFormik } from "formik";
 import { useMutation } from "@apollo/client";
 import mutation from "@/graphql/mutations";
 import { sighupSchema } from "@/app/lib/validation/authSchema";
+import Button from "../Button";
 
 const RegisterForm = () => {
   const [signUp] = useMutation(mutation.SIGNUP);
@@ -66,7 +67,7 @@ const RegisterForm = () => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
             id="password"
             placeholder="Enter your password"
-            type="text"
+            type="password"
             onChange={formik.handleChange}
             value={formik.values.password}
           />
@@ -82,7 +83,7 @@ const RegisterForm = () => {
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
             id="confirmPassword"
             placeholder="Confirm your password"
-            type="text"
+            type="password"
             onChange={formik.handleChange}
             value={formik.values.confirmPassword}
           />
@@ -90,12 +91,7 @@ const RegisterForm = () => {
             <p>{formik.errors.confirmPassword}</p>
           )}
         </div>
-        <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded transition-all"
-          type="submit"
-        >
-          Register
-        </button>
+        <Button text="Register" type="submit" as="primary" />
       </form>
     </div>
   );
