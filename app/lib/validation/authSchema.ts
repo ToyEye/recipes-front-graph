@@ -16,7 +16,6 @@ export const sighupSchema = Yup.object().shape({
 });
 
 export const loginSchema = Yup.object().shape({
-  name: Yup.string().required("Please enter your name"),
   email: Yup.string()
     .email("Enter a correct email")
     .required("Please enter email"),

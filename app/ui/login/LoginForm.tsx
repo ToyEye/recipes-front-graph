@@ -1,14 +1,15 @@
 "use client";
 
-import { loginSchema } from "@/app/lib/validation/authSchema";
-import { useFormik } from "formik";
 import React from "react";
-import Button from "../Button";
+import { useFormik } from "formik";
+import { useMutation } from "@apollo/client";
 
 import Label from "../Label";
 import Input from "../Input";
-import { useMutation } from "@apollo/client";
+import Button from "../Button";
+
 import mutation from "@/graphql/mutations";
+import { loginSchema } from "@/app/lib/validation/authSchema";
 
 const LoginForm = () => {
   const [login] = useMutation(mutation.LOGIN);
@@ -24,7 +25,7 @@ const LoginForm = () => {
         variables: values,
       });
       console.log(data);
-      await localStorage.setItem("token", data?.signin.token);
+      localStorage.setItem("token", data?.signin.token);
     },
   });
 
