@@ -6,6 +6,8 @@ import { useMutation } from "@apollo/client";
 import mutation from "@/graphql/mutations";
 import { sighupSchema } from "@/app/lib/validation/authSchema";
 import Button from "../Button";
+import Input from "../Input";
+import Label from "../Label";
 
 const RegisterForm = () => {
   const [signUp] = useMutation(mutation.SIGNUP);
@@ -31,61 +33,51 @@ const RegisterForm = () => {
     <div className="max-w-md mx-auto">
       <form onSubmit={formik.handleSubmit}>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="name">
-            Name
-          </label>
-          <input
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          <Label text="Name" as="primary" id="name" />
+          <Input
             id="name"
             placeholder="Enter your name"
             type="text"
             onChange={formik.handleChange}
             value={formik.values.name}
+            aria="input for enter name"
+            as="primary"
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700 font-bold mb-2" htmlFor="email">
-            Email
-          </label>
-          <input
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          <Label text="Email" as="primary" id="email" />
+          <Input
             id="email"
             placeholder="Enter your email"
             type="email"
             onChange={formik.handleChange}
             value={formik.values.email}
+            aria="input for enter email"
+            as="primary"
           />
         </div>
         <div className="mb-4">
-          <label
-            className="block text-gray-700 font-bold mb-2"
-            htmlFor="password"
-          >
-            Password
-          </label>
-          <input
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          <Label text="Password" as="primary" id="password" />
+          <Input
             id="password"
             placeholder="Enter your password"
             type="password"
             onChange={formik.handleChange}
             value={formik.values.password}
+            aria="input for enter password"
+            as="primary"
           />
         </div>
         <div className="mb-4">
-          <label
-            className="block text-gray-700 font-bold mb-2"
-            htmlFor="confirm-password"
-          >
-            Confirm Password
-          </label>
-          <input
-            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          <Label text="Confirm Password" as="primary" id="confirmPassword" />
+          <Input
             id="confirmPassword"
             placeholder="Confirm your password"
             type="password"
             onChange={formik.handleChange}
             value={formik.values.confirmPassword}
+            aria="input for enter confirm password"
+            as="primary"
           />
           {formik.errors.confirmPassword && formik.touched.confirmPassword && (
             <p>{formik.errors.confirmPassword}</p>

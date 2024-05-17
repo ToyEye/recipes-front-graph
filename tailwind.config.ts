@@ -24,6 +24,8 @@ const config: Config = {
         "mob-calc": "calc(100vh - 64px - 156px - 96px)",
         "tab-calc": "calc(100vh - 64px - 116px - 192px)",
         "desc-calc": "calc(100vh - 64px - 116px)",
+        "mob-calc-auth": "calc(100vh - 64px - 156px)",
+        "tab-calc-auth": "calc(100vh - 64px - 116px)",
       },
     },
   },
