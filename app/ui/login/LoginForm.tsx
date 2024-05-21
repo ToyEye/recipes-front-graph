@@ -10,6 +10,7 @@ import Button from "../Button";
 
 import mutation from "@/graphql/mutations";
 import { loginSchema } from "@/app/lib/validation/authSchema";
+import { signIn } from "next-auth/react";
 
 const LoginForm = () => {
   const [login] = useMutation(mutation.LOGIN);
@@ -21,11 +22,17 @@ const LoginForm = () => {
     },
     validationSchema: loginSchema,
     onSubmit: async (values) => {
-      const { data } = await login({
-        variables: values,
+      const result = await signIn("credentials", {
+        redirect: false,
+        email: values.email,
+        password: values.password,
       });
-      console.log(data);
-      localStorage.setItem("token", data?.signin.token);
+
+      if (result?.error) {
+        console.error(result.error);
+      } else {
+        console.log("Login successful", result);
+      }
     },
   });
 
